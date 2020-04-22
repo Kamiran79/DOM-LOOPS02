@@ -1,5 +1,5 @@
 console.log("this DOM-Loops02");
-
+/*
 
 const colors = ['red', 'orange', 'blue', 'white'];
 
@@ -21,7 +21,7 @@ const instructor = [{FirstName: 'Luke', LastName: 'Lancster'},
                     {FirstName: 'Micheal', LastName: 'hhh'}];
 
 */
-
+/*
 const instructor = [
                    {FirstName: 'Luke', LastName: 'Lancster'},
                    {FirstName: 'Matt', LastName: 'Gill'},
@@ -41,3 +41,59 @@ const instructorLoop = () => {
  }
 
  init();
+
+ */
+
+
+ const dinos = [
+    {
+        title: 'Java',
+        dueDate: '02/19/2020',
+        topic: 'first topic',
+        notes:'comments go here'
+    },
+    {
+        title: 'JavaScript',
+        dueDate: '01/19/2020',
+        topic: 'second topic',
+        notes:'comments go here'
+    },
+    {
+        title: 'C#',
+        dueDate: '03/19/2020',
+        topic: 'third topic',
+        notes:'comments go here'
+    },    
+];
+
+const printToDom = (selector, textToPrint) => {
+    const selectedDiv = document.querySelector(selector);
+    selectedDiv.innerHTML = textToPrint;
+}
+
+const buildDinoCards = (dinoCollection) => {
+    //todo: build dino card
+    let domString = '';
+    for (let i = 0; i < dinoCollection.length; i++){
+        domString += '<div class="dino">';
+        domString += `<h2>Title: ${dinos[i].title}</h2>`;
+        domString += `<h3>dueDate: ${dinos[i].dueDate}</h3>`;
+        domString += `<h3>Topic: ${dinos[i].topic}</h3>`;
+        domString += `<h3>Notes: ${dinos[i].notes}</h3>`;
+        domString += '</div>';
+    }
+
+    console.log(domString);
+    printToDom('#dino-pen', domString);
+
+    //const selectedDiv = document.querySelector('#dino-pen');
+    //selectedDiv.innerHTML = domString;
+}
+/*
+const init = () => {
+    buildDinoCards(dinos);
+}
+
+init();
+
+*/
